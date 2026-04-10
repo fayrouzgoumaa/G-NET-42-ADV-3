@@ -103,40 +103,74 @@
             //    Console.WriteLine($"{p.Key} - {p.Value}");
             #endregion
             #region Exercise3
-            Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+            //Dictionary<string, string> phoneBook = new Dictionary<string, string>();
 
-            phoneBook["Ahmed"] = "0100";
-            phoneBook["Sara"] = "0111";
-            phoneBook["Ali"] = "0122";
-            phoneBook["Mona"] = "0133";
-            phoneBook["Omar"] = "0144";
-            try
-            {
-                phoneBook.Add("Ahmed", "9999");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Duplicate Error: " + ex.Message);
-            }
-            bool added = phoneBook.TryAdd("Sara", "8888");
-            Console.WriteLine("TryAdd Sara success? " + added);
+            //phoneBook["Ahmed"] = "0100";
+            //phoneBook["Sara"] = "0111";
+            //phoneBook["Ali"] = "0122";
+            //phoneBook["Mona"] = "0133";
+            //phoneBook["Omar"] = "0144";
+            //try
+            //{
+            //    phoneBook.Add("Ahmed", "9999");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("Duplicate Error: " + ex.Message);
+            //}
+            //bool added = phoneBook.TryAdd("Sara", "8888");
+            //Console.WriteLine("TryAdd Sara success? " + added);
 
-            if (!phoneBook.ContainsKey("Khaled"))
-                Console.WriteLine("Khaled not found");
+            //if (!phoneBook.ContainsKey("Khaled"))
+            //    Console.WriteLine("Khaled not found");
 
-            if (phoneBook.TryGetValue("Khaled", out string number))
-                Console.WriteLine(number);
-            else
-                Console.WriteLine("Not Found");
-            Console.WriteLine("Names:");
-            foreach (var key in phoneBook.Keys)
-                Console.Write(key + " ");
+            //if (phoneBook.TryGetValue("Khaled", out string number))
+            //    Console.WriteLine(number);
+            //else
+            //    Console.WriteLine("Not Found");
+            //Console.WriteLine("Names:");
+            //foreach (var key in phoneBook.Keys)
+            //    Console.Write(key + " ");
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            Console.WriteLine("Numbers:");
-            foreach (var value in phoneBook.Values)
-                Console.Write(value + " ");
+            //Console.WriteLine("Numbers:");
+            //foreach (var value in phoneBook.Values)
+            //    Console.Write(value + " ");
+            #endregion
+            #region Exercise4 
+            //HashSet<string> emails = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            //emails.Add("ahmed@test.com");
+            //emails.Add("AHMED@test.com");
+            //emails.Add("sara@test.com");
+            //emails.Add("Sara@Test.com");
+
+            //Console.WriteLine("Emails Count: " + emails.Count);
+            //HashSet<int> setA = new HashSet<int>() { 1, 2, 3, 4, 5 };
+            //HashSet<int> setB = new HashSet<int>() { 4, 5, 6, 7, 8 };
+            //var union = new HashSet<int>(setA);
+            //union.UnionWith(setB);
+            //Console.WriteLine("Union:");
+            //foreach (var x in union)
+            //    Console.Write(x + " ");
+            //Console.WriteLine();
+            //var intersect = new HashSet<int>(setA);
+            //intersect.IntersectWith(setB);
+            //Console.WriteLine("Intersection:");
+            //foreach (var x in intersect)
+            //    Console.Write(x + " ");
+            //Console.WriteLine();
+            //var except = new HashSet<int>(setA);
+            //except.ExceptWith(setB);
+            //Console.WriteLine("Except (A - B):");
+            //foreach (var x in except)
+            //    Console.Write(x + " ");
+            //Console.WriteLine();
+
+            //HashSet<int> smallSet = new HashSet<int>() { 1, 2 };
+            //Console.WriteLine("Is subset? " + smallSet.IsSubsetOf(setA));
+
             #endregion
         }
     }
