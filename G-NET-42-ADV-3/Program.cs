@@ -58,49 +58,85 @@
             //    Console.WriteLine("Grade: " + g);
             #endregion
             #region Exercise2
-            List<KeyValuePair<string, int>> players = new List<KeyValuePair<string, int>>();
+            //List<KeyValuePair<string, int>> players = new List<KeyValuePair<string, int>>();
 
-            players.Add(new KeyValuePair<string, int>("Ahmed", 500));
-            players.Add(new KeyValuePair<string, int>("Sara", 200));
-            players.Add(new KeyValuePair<string, int>("Ali", 800));
-            players.Add(new KeyValuePair<string, int>("Mona", 350));
+            //players.Add(new KeyValuePair<string, int>("Ahmed", 500));
+            //players.Add(new KeyValuePair<string, int>("Sara", 200));
+            //players.Add(new KeyValuePair<string, int>("Ali", 800));
+            //players.Add(new KeyValuePair<string, int>("Mona", 350));
 
-            players.Sort((a, b) => b.Value.CompareTo(a.Value));
+            //players.Sort((a, b) => b.Value.CompareTo(a.Value));
 
-            Console.WriteLine("Leaderboard:");
-            foreach (var p in players)
-                Console.WriteLine($"{p.Key} - {p.Value}");
+            //Console.WriteLine("Leaderboard:");
+            //foreach (var p in players)
+            //    Console.WriteLine($"{p.Key} - {p.Value}");
 
-            Console.WriteLine($"Top Player: {players[0].Key}");
+            //Console.WriteLine($"Top Player: {players[0].Key}");
 
-            bool found500 = false;
-            foreach (var p in players)
+            //bool found500 = false;
+            //foreach (var p in players)
+            //{
+            //    if (p.Value == 500)
+            //    {
+            //        found500 = true;
+            //        break;
+            //    }
+            //}
+            //Console.WriteLine("Score 500 exists? " + found500);
+
+            //bool found999 = false;
+            //foreach (var p in players)
+            //{
+            //    if (p.Value == 999)
+            //    {
+            //        Console.WriteLine(p.Key);
+            //        found999 = true;
+            //    }
+            //}
+            //if (!found999)
+            //    Console.WriteLine("Score 999 not found");
+
+            //players.RemoveAll(p => p.Value == 200);
+
+            //Console.WriteLine("After removing score 200:");
+            //foreach (var p in players)
+            //    Console.WriteLine($"{p.Key} - {p.Value}");
+            #endregion
+            #region Exercise3
+            Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+
+            phoneBook["Ahmed"] = "0100";
+            phoneBook["Sara"] = "0111";
+            phoneBook["Ali"] = "0122";
+            phoneBook["Mona"] = "0133";
+            phoneBook["Omar"] = "0144";
+            try
             {
-                if (p.Value == 500)
-                {
-                    found500 = true;
-                    break;
-                }
+                phoneBook.Add("Ahmed", "9999");
             }
-            Console.WriteLine("Score 500 exists? " + found500);
-
-            bool found999 = false;
-            foreach (var p in players)
+            catch (Exception ex)
             {
-                if (p.Value == 999)
-                {
-                    Console.WriteLine(p.Key);
-                    found999 = true;
-                }
+                Console.WriteLine("Duplicate Error: " + ex.Message);
             }
-            if (!found999)
-                Console.WriteLine("Score 999 not found");
+            bool added = phoneBook.TryAdd("Sara", "8888");
+            Console.WriteLine("TryAdd Sara success? " + added);
 
-            players.RemoveAll(p => p.Value == 200);
+            if (!phoneBook.ContainsKey("Khaled"))
+                Console.WriteLine("Khaled not found");
 
-            Console.WriteLine("After removing score 200:");
-            foreach (var p in players)
-                Console.WriteLine($"{p.Key} - {p.Value}");
+            if (phoneBook.TryGetValue("Khaled", out string number))
+                Console.WriteLine(number);
+            else
+                Console.WriteLine("Not Found");
+            Console.WriteLine("Names:");
+            foreach (var key in phoneBook.Keys)
+                Console.Write(key + " ");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Numbers:");
+            foreach (var value in phoneBook.Values)
+                Console.Write(value + " ");
             #endregion
         }
     }
