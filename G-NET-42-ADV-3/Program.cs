@@ -195,6 +195,28 @@
             //bool success = printerQueue.TryDequeue(out string result);
             //Console.WriteLine("TryDequeue success? " + success);
             #endregion
+            #region Exercise6
+            //Stack<string> history = new Stack<string>();
+
+            //history.Push("google.com");
+            //history.Push("github.com");
+            //history.Push("stackoverflow.com");
+            //history.Push("youtube.com");
+            //history.Push("claude.ai");
+            //Console.WriteLine("Current page: " + history.Peek());
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    if (history.Count > 0)
+            //        Console.WriteLine("Back from: " + history.Pop());
+            //}
+            //if (history.Count > 0)
+            //    Console.WriteLine("Now at: " + history.Peek());
+            //while (history.Count > 0)
+            //    history.Pop();
+
+            //bool popped = history.TryPop(out string page);
+            //Console.WriteLine("TryPop success? " + popped);
+            #endregion
         }
     }
 }
