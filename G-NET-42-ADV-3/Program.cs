@@ -172,6 +172,29 @@
             //Console.WriteLine("Is subset? " + smallSet.IsSubsetOf(setA));
 
             #endregion
+            #region Exercise5
+
+            //Queue<string> printerQueue = new Queue<string>();
+
+            //printerQueue.Enqueue("Report.pdf");
+            //printerQueue.Enqueue("Invoice.pdf");
+            //printerQueue.Enqueue("Letter.docx");
+            //printerQueue.Enqueue("Resume.pdf");
+            //printerQueue.Enqueue("Photo.jpg");
+            //Console.WriteLine("Queue:");
+            //foreach (var doc in printerQueue)
+            //    Console.WriteLine(doc);
+
+            //Console.WriteLine("Count: " + printerQueue.Count);
+            //Console.WriteLine("Next to print: " + printerQueue.Peek());
+            //while (printerQueue.Count > 0)
+            //{
+            //    string doc = printerQueue.Dequeue();
+            //    Console.WriteLine("Printing: " + doc);
+            //}
+            //bool success = printerQueue.TryDequeue(out string result);
+            //Console.WriteLine("TryDequeue success? " + success);
+            #endregion
         }
     }
 }
