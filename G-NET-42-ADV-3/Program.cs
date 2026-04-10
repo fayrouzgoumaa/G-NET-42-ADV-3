@@ -5,57 +5,102 @@
         static void Main(string[] args)
         {
             #region Exercise1
-            List<int> grades = new List<int> { 85, 92, 78, 95, 88, 70, 100, 65 };
+            //List<int> grades = new List<int> { 85, 92, 78, 95, 88, 70, 100, 65 };
 
-            Console.WriteLine($"Count: {grades.Count}");
-            Console.WriteLine($"First: {grades[0]}");
-            Console.WriteLine($"Last: {grades[grades.Count - 1]}");
+            //Console.WriteLine($"Count: {grades.Count}");
+            //Console.WriteLine($"First: {grades[0]}");
+            //Console.WriteLine($"Last: {grades[grades.Count - 1]}");
 
-            grades.Sort();
-            Console.WriteLine("Sorted Grades:");
-            foreach (var g in grades)
-                Console.Write(g + " ");
-            Console.WriteLine();
+            //grades.Sort();
+            //Console.WriteLine("Sorted Grades:");
+            //foreach (var g in grades)
+            //    Console.Write(g + " ");
+            //Console.WriteLine();
 
-            int firstAbove90 = -1;
-            foreach (var g in grades)
+            //int firstAbove90 = -1;
+            //foreach (var g in grades)
+            //{
+            //    if (g > 90)
+            //    {
+            //        firstAbove90 = g;
+            //        break;
+            //    }
+            //}
+            //Console.WriteLine($"First > 90: {firstAbove90}");
+
+            //Console.WriteLine("Failing Grades (<75):");
+            //foreach (var g in grades)
+            //{
+            //    if (g < 75)
+            //        Console.Write(g + " ");
+            //}
+            //Console.WriteLine();
+
+            //grades.RemoveAll(g => g < 75);
+            //Console.WriteLine("After removing failing:");
+            //foreach (var g in grades)
+            //    Console.Write(g + " ");
+            //Console.WriteLine();
+
+            //bool has100 = false;
+            //foreach (var g in grades)
+            //{
+            //    if (g == 100)
+            //    {
+            //        has100 = true;
+            //        break;
+            //    }
+            //}
+            //Console.WriteLine("Contains 100? " + has100);
+
+            //Console.WriteLine("Grades as strings:");
+            //foreach (var g in grades)
+            //    Console.WriteLine("Grade: " + g);
+            #endregion
+            #region Exercise2
+            List<KeyValuePair<string, int>> players = new List<KeyValuePair<string, int>>();
+
+            players.Add(new KeyValuePair<string, int>("Ahmed", 500));
+            players.Add(new KeyValuePair<string, int>("Sara", 200));
+            players.Add(new KeyValuePair<string, int>("Ali", 800));
+            players.Add(new KeyValuePair<string, int>("Mona", 350));
+
+            players.Sort((a, b) => b.Value.CompareTo(a.Value));
+
+            Console.WriteLine("Leaderboard:");
+            foreach (var p in players)
+                Console.WriteLine($"{p.Key} - {p.Value}");
+
+            Console.WriteLine($"Top Player: {players[0].Key}");
+
+            bool found500 = false;
+            foreach (var p in players)
             {
-                if (g > 90)
+                if (p.Value == 500)
                 {
-                    firstAbove90 = g;
+                    found500 = true;
                     break;
                 }
             }
-            Console.WriteLine($"First > 90: {firstAbove90}");
+            Console.WriteLine("Score 500 exists? " + found500);
 
-            Console.WriteLine("Failing Grades (<75):");
-            foreach (var g in grades)
+            bool found999 = false;
+            foreach (var p in players)
             {
-                if (g < 75)
-                    Console.Write(g + " ");
-            }
-            Console.WriteLine();
-
-            grades.RemoveAll(g => g < 75);
-            Console.WriteLine("After removing failing:");
-            foreach (var g in grades)
-                Console.Write(g + " ");
-            Console.WriteLine();
-
-            bool has100 = false;
-            foreach (var g in grades)
-            {
-                if (g == 100)
+                if (p.Value == 999)
                 {
-                    has100 = true;
-                    break;
+                    Console.WriteLine(p.Key);
+                    found999 = true;
                 }
             }
-            Console.WriteLine("Contains 100? " + has100);
+            if (!found999)
+                Console.WriteLine("Score 999 not found");
 
-            Console.WriteLine("Grades as strings:");
-            foreach (var g in grades)
-                Console.WriteLine("Grade: " + g);
+            players.RemoveAll(p => p.Value == 200);
+
+            Console.WriteLine("After removing score 200:");
+            foreach (var p in players)
+                Console.WriteLine($"{p.Key} - {p.Value}");
             #endregion
         }
     }
